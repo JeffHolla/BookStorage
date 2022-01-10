@@ -1,0 +1,15 @@
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.AssemblyReference.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\BLL\obj\Debug\netcoreapp3.1\BLL.pdb

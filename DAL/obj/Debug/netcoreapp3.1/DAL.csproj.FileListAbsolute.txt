@@ -1,0 +1,13 @@
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.AssemblyReference.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\BookStorage\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
