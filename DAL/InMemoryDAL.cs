@@ -8,8 +8,8 @@ namespace DAL
 {
     public class InMemoryDAL : IDAO
     {
-        public List<Book> Books { get; set; }
-        public List<Author> Authors { get; set; }
+        private List<Book> Books { get; set; }
+        private List<Author> Authors { get; set; }
 
         public InMemoryDAL()
         {
@@ -17,6 +17,7 @@ namespace DAL
             Authors = new List<Author>();
         }
 
+        // For creating DAL with data
         public InMemoryDAL(IEnumerable<Book> books, IEnumerable<Author> authors)
         {
             Books = books is null ? new List<Book>() : books.ToList();
@@ -47,6 +48,8 @@ namespace DAL
                                                     x.Surname == author.Surname &&
                                                     x.YearOfBirth == author.YearOfBirth &&
                                                     x.City == author.City);
+
+            // If nothing is found, then add the Author, because there are no such authors 
             if (found == null)
             {
                 Authors.Add(author);
@@ -61,6 +64,7 @@ namespace DAL
         {
             var author = Authors.FirstOrDefault(x => x.Name == name && x.Surname == surname);
 
+            // If we found someone, then adding book
             if (author != null)
             {
                 author.Books.Add(book);
@@ -75,6 +79,7 @@ namespace DAL
         {
             var author = Authors.FirstOrDefault(x => x.Name == name && x.Surname == surname);
 
+            // If we found something, then delete the author
             if (author != null)
             {
                 Authors.Remove(author);
@@ -89,6 +94,7 @@ namespace DAL
         {
             var book = Books.FirstOrDefault(x => x.Name == name && x.IdentificationNumber == idNumber);
 
+            // If we found something, then delete the book
             if (book != null)
             {
                 Books.Remove(book);

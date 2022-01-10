@@ -17,27 +17,67 @@ namespace BLL
 
         public void AddAuthor(Author author)
         {
-            _DAO.AddAuthor(author);
+            // In order not to show the exception to the user
+            try
+            {
+                _DAO.AddAuthor(author);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void AddBook(Book book)
         {
-            _DAO.AddBook(book);
+            // In order not to show the exception to the user
+            try
+            {
+                _DAO.AddBook(book);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void AddBookToTheAuthor(string name, string surname, Book book)
         {
-            _DAO.AddBookToTheAuthor(name, surname, book);
+            // In order not to show the exception to the user
+            try
+            {
+                _DAO.AddBookToTheAuthor(name, surname, book);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void DeleteAuthor(string name, string surname)
         {
-            _DAO.DeleteAuthor(name, surname);
+            // In order not to show the exception to the user
+            try
+            {
+                _DAO.DeleteAuthor(name, surname);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void DeleteBook(string name, int idNumber)
         {
-            _DAO.DeleteBook(name, idNumber);
+            // In order not to show the exception to the user
+            try
+            {
+                _DAO.DeleteBook(name, idNumber);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public IEnumerable<Book> FindBooksByAuthorName(string authorName)

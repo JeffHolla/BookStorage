@@ -13,6 +13,7 @@ namespace ConsolePL
     {
         private BLL.SimpleBLL _BLL;
 
+        // Path to local save file with data
         private const string PathToBookStorageFile = @"../../../BookStorageFile.json";
 
         public UserConsole()
@@ -25,10 +26,13 @@ namespace ConsolePL
 
         public void Run()
         {
+            // Load data from local file on load program
             OnProgramStart();
 
+            // Main menu 
             ShowMenus();
 
+            // Save data from local file on load program
             OnProgramExit();
         }
 
@@ -109,6 +113,7 @@ namespace ConsolePL
             }
         }
 
+        // Method, that helps concat all props of Book and create new one
         private Book AddBook()
         {
             Console.WriteLine("Введите название:");
@@ -179,6 +184,7 @@ namespace ConsolePL
             return book;
         }
 
+        // Method, that helps concat all props of Author and create new one
         private void AddAuthor()
         {
             Console.WriteLine("Введите имя:");
@@ -249,6 +255,7 @@ namespace ConsolePL
 
                 switch (command.Trim())
                 {
+                    // Show all authors and books. Then match them and adding book to the choosen author
                     case "1":
                         int counter = 0;
                         Console.Clear();
@@ -281,6 +288,7 @@ namespace ConsolePL
                         _BLL.AddBookToTheAuthor(author.Name, author.Surname, posBooks[parsedBook]);
                         break;
 
+                    // Show all authors, but create a new book. Then match them and adding book to the choosen author
                     case "2":
                         var newBook = AddBook();
                         if (newBook is null)
@@ -306,6 +314,7 @@ namespace ConsolePL
             }
         }
 
+        // Check that string is valid. May be added in future with many other checks
         private bool IsValidString(string justAString)
         {
             if (justAString == string.Empty)
@@ -317,6 +326,7 @@ namespace ConsolePL
             return true;
         }
 
+        // Method-helper. Help to show like list all authors
         private Author ChooseAuthor()
         {
             Console.WriteLine("Выберите и ведите номер автора");
@@ -341,6 +351,7 @@ namespace ConsolePL
             return posAuthors[parsedAuthor];
         }
 
+        // Check that Author in Book is equivalent to the author name
         private bool IsToChangeBookAuthorFromBook(Book book, string authorName)
         {
             if (book.Author != authorName)
@@ -375,6 +386,7 @@ namespace ConsolePL
             return false;
         }
 
+        // Method-Helper. Helps to correct parse int
         private int InputInt()
         {
             while (true)
@@ -502,6 +514,7 @@ namespace ConsolePL
 
                 command = Console.ReadLine();
 
+                // In all cases just getting data and showing it
                 switch (command.Trim())
                 {
                     case "1":
@@ -575,6 +588,8 @@ namespace ConsolePL
 
         private void OnProgramStart()
         {
+            // Read data from file on start program in special container,
+            // that contains 2 props - for easialy serialization and deserialization
             var jsonString = File.ReadAllText(PathToBookStorageFile);
             var jsonContainerData = JsonSerializer.Deserialize<JsonContainer>(jsonString);
 
@@ -583,6 +598,8 @@ namespace ConsolePL
 
         private void OnProgramExit()
         {
+            // Write data to file on exit program. Create instance of special container,
+            // that contains 2 props - for easialy serialization and deserialization
             JsonContainer jsonContainer = new JsonContainer()
             {
                 Books = _BLL.GetAllBooks(),
@@ -595,69 +612,3 @@ namespace ConsolePL
         }
     }
 }
-
-//var author1 = new Author()
-//{
-//    Books = new List<Book>(),
-//    City = "Hey",
-//    Name = "Ex1",
-//    Surname = "Surname1",
-//    YearOfBirth = 1992
-//};
-
-//var author2 = new Author()
-//{
-//    Books = new List<Book>(),
-//    City = "HeyCity",
-//    Name = "Ex2",
-//    Surname = "Surname2",
-//    YearOfBirth = 1998
-//};
-
-//var book1 = new Book()
-//{
-//    Author = "Ex1",
-//    Description = "Desc",
-//    IdentificationNumber = 1,
-//    Name = "Book1",
-//    YearOfWriting = 2015
-//};
-
-//var book2 = new Book()
-//{
-//    Author = "Ex2",
-//    Description = "SomeDesc",
-//    IdentificationNumber = 2,
-//    Name = "Book2",
-//    YearOfWriting = 2019
-//};
-
-//var book3 = new Book()
-//{
-//    Author = "Ex3",
-//    Description = "SomeDesc3",
-//    IdentificationNumber = 3,
-//    Name = "Book3",
-//    YearOfWriting = 2029
-//};
-
-//author1.Books.Add(book1);
-
-//JsonContainer jsonContainer = new JsonContainer()
-//{
-//    Books = new Book[]
-//    {
-//        book1,
-//        book2,
-//        book3,
-//    },
-//    Authors = new Author[]
-//    {
-//        author1,
-//        author2
-//    }
-//};
-//var containerSerialized = JsonSerializer.Serialize(jsonContainer);
-
-//File.WriteAllText(PathToBookStorageFile, containerSerialized);
-

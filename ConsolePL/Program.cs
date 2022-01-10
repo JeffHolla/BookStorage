@@ -11,6 +11,8 @@ namespace ConsolePL
     {
         static void Main(string[] args)
         {
+            // Create a console instance and run it 
+            // Just not to do in the main 
             UserConsole userConsole = new UserConsole();
             userConsole.Run();
         }

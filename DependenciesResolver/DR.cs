@@ -4,6 +4,7 @@ using System;
 
 namespace DependenciesResolver
 {
+    // Just a regular DR
     public static class DR
     {
         public static InMemoryDAL DAO { get; set; }
