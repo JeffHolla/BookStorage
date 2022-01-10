@@ -113,18 +113,58 @@ namespace ConsolePL
         {
             Console.WriteLine("Введите название:");
             string name = Console.ReadLine().Trim();
+            if (!IsValidString(name))
+            {
+                return null;
+            }
 
             Console.WriteLine("Введите имя автора:");
             string author = Console.ReadLine().Trim();
+            if (!IsValidString(author))
+            {
+                return null;
+            }
 
-            Console.WriteLine("Введите год написания:");
-            int yearOfWriting = InputInt();
+            int yearOfWriting;
+            while (true)
+            {
+                Console.WriteLine("Введите год написания:");
+                yearOfWriting = InputInt();
 
-            Console.WriteLine("Введите идентификационный номер:");
-            int identNumber = InputInt();
+                if (yearOfWriting <= 2022)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Год написания не может быть больше, чем текущая дата!");
+                    Console.WriteLine();
+                }
+            }
+
+            int identNumber;
+            while (true)
+            {
+                Console.WriteLine("Введите идентификационный номер:");
+                identNumber = InputInt();
+
+                if (identNumber >= 0)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("идентификационный номер не может быть меньше нуля!");
+                    Console.WriteLine();
+                }
+            }
 
             Console.WriteLine("Введите описание:");
             string description = Console.ReadLine().Trim();
+            if (!IsValidString(description))
+            {
+                return null;
+            }
 
             Book book = new Book()
             {
@@ -143,15 +183,41 @@ namespace ConsolePL
         {
             Console.WriteLine("Введите имя:");
             string name = Console.ReadLine().Trim();
-
+            if (!IsValidString(name))
+            {
+                return;
+            }
+            
             Console.WriteLine("Введите фамилию:");
             string surname = Console.ReadLine().Trim();
+            if (!IsValidString(surname))
+            {
+                return;
+            }
 
-            Console.WriteLine("Введите год рождения:");
-            int yearOfBirth = InputInt();
+            int yearOfBirth;
+            while (true)
+            {
+                Console.WriteLine("Введите год рождения:");
+                yearOfBirth = InputInt();
+
+                if (yearOfBirth <= 2022 && yearOfBirth >= 1900)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Год рождения не может быть больше, чем 2022 и не может быть меньше, чем 1900!");
+                    Console.WriteLine();
+                }
+            }
 
             Console.WriteLine("Введите город:");
             string city = Console.ReadLine().Trim();
+            if (!IsValidString(city))
+            {
+                return;
+            }
 
             Author author = new Author()
             {
@@ -217,6 +283,11 @@ namespace ConsolePL
 
                     case "2":
                         var newBook = AddBook();
+                        if (newBook is null)
+                        {
+                            break;
+                        }
+
                         var authorChoosed = ChooseAuthor();
 
                         if (IsToChangeBookAuthorFromBook(newBook, authorChoosed.Name))
@@ -233,6 +304,17 @@ namespace ConsolePL
                 }
 
             }
+        }
+
+        private bool IsValidString(string justAString)
+        {
+            if (justAString == string.Empty)
+            {
+                Console.WriteLine("Строка не может быть пустой!");
+                return false;
+            }
+
+            return true;
         }
 
         private Author ChooseAuthor()

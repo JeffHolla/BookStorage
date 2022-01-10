@@ -25,12 +25,36 @@ namespace DAL
 
         public void AddBook(Book book)
         {
-            Books.Add(book);
+            // Check for almost all params of book
+            var found = Books.FirstOrDefault(x => x.Name == book.Name &&
+                                                  x.YearOfWriting == book.YearOfWriting &&
+                                                  x.Author == book.Author &&
+                                                  x.IdentificationNumber == book.IdentificationNumber);
+            if (found == null)
+            {
+                Books.Add(book);
+            }
+            else
+            {
+                throw new Exception("Such a book has already been added!");
+            }
         }
 
         public void AddAuthor(Author author)
         {
-            Authors.Add(author);
+            // Check for all params of author
+            var found = Authors.FirstOrDefault(x => x.Name == author.Name &&
+                                                    x.Surname == author.Surname &&
+                                                    x.YearOfBirth == author.YearOfBirth &&
+                                                    x.City == author.City);
+            if (found == null)
+            {
+                Authors.Add(author);
+            }
+            else
+            {
+                throw new Exception("Such an author has already been added!");
+            }
         }
 
         public void AddBookToTheAuthor(string name, string surname, Book book)
